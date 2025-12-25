@@ -179,7 +179,7 @@ export const useCRMStore = defineStore('crm', {
       
       try {
         // First, use DOMPurify to sanitize HTML
-        const sanitized = DOMPurify.sanitize(text, {
+        const sanitized = (.sanitize(text, {
           ALLOWED_TAGS: ['span', 'br', 'strong', 'em'],
           ALLOWED_ATTR: ['style', 'class']
         })
