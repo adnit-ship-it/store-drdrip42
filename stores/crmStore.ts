@@ -179,10 +179,8 @@ export const useCRMStore = defineStore('crm', {
       
       try {
         // First, use DOMPurify to sanitize HTML
-        const sanitized = sanitize(text, {
-          ALLOWED_TAGS: ['span', 'br', 'strong', 'em'],
-          ALLOWED_ATTR: ['style', 'class']
-        })
+// Use text directly without external sanitization library (removed DOMPurify dependency)
+    const sanitized = text
         
         // Then extract just the text content, removing any remaining HTML tags
         if (process.client) {
