@@ -78,7 +78,7 @@ const productImageUrl = computed(() => {
 const productName = computed(() => {
   if (crmStore.defaultProductBundle && crmStore.defaultProductBundle.products.length > 0) {
     const rawName = crmStore.defaultProductBundle.products[0].name
-    return DOMPurify.sanitize(rawName, { ALLOWED_TAGS: [] })
+    return rawName
   }
   return 'Medivora GLP-1 Injection' // fallback
 })
@@ -93,7 +93,7 @@ const productPrice = computed(() => {
 const productDescription = computed(() => {
   if (crmStore.defaultProductBundle) {
     const rawDescription = crmStore.defaultProductBundle.description || 'Lose weight fast with our personalized medication.'
-    return DOMPurify.sanitize(rawDescription, { ALLOWED_TAGS: [] })
+    return rawDescription
   }
   return 'Lose weight fast with our personalized medication.' // fallback
 })
