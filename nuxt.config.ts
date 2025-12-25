@@ -27,6 +27,13 @@ export default defineNuxtConfig({
       }
     }
   },
+
+    // Nitro configuration to fix JSDOM/parse5 ESM issue on Vercel
+  nitro: {
+    rollupConfig: {
+      external: ['jsdom']
+    }
+  },
   
   runtimeConfig: {
     // Server-only environment variables (not exposed to client)
