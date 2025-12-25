@@ -1,5 +1,4 @@
 import { defineStore } from 'pinia'
-import DOMPurify from 'isomorphic-dompurify'
 import { sanitizeCRMData } from '~/utils/sanitizeCRMData'
 
 export const useCRMStore = defineStore('crm', {
